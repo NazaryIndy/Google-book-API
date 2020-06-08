@@ -1,0 +1,79 @@
+@import 'var';
+@import 'reset';
+
+%flex-center {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.main {
+  margin: 50px auto;
+  width: 80%;
+  font-family: $font;
+  font-size: $font-size;
+}
+
+.app-container {
+  @extend %flex-center;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.search-form {
+  @extend %flex-center;
+  width: 80%;
+}
+
+.search-input {
+  width: 70%;
+  padding: 10px;
+  border: none;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .16),
+    0 0 0 1px rgba(0, 0, 0, .08);
+  font-family: $font;
+  font-size: $font-size;
+  color: $text-color-dark;
+
+  &:hover, :active, :focus {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .32),
+    0 0 0 1px rgba(0, 0, 0, .16);
+  }
+}
+
+.search-button {
+  height: 50px;
+  width: 100px;
+  background-color: $button-bgcolor;
+  color: $text-color-light;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .30),
+    0 0 0 1px rgba(0, 0, 0, .25);
+
+    &:hover, :active, :focus {
+      background-color: rgba(49, 48, 47, .63);
+  }
+}
+
+.result {
+  margin-top: 15px;
+
+  li {
+    padding: 3px 5px;
+    margin-bottom: 10px;
+    border-left: 10px solid #8BC63E;
+    box-shadow: 1px -1px 5px 0 rgba(0, 0, 0, .1),
+      -1px -1px 5px 0 rgba(0, 0, 0, .1),
+      1px 1px 5px 0 rgba(0, 0, 0, .1),
+      -1px 1px 5px 0 rgba(0, 0, 0, .1);
+    transition: 0.4s all linear;
+
+    &:hover {
+      border-left: 10px solid transparent;
+      border-right: 10px solid #8BC63E;
+    }
+  }
+
+  > p {
+    text-align: center;
+  }
+}
